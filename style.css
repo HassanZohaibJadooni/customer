@@ -1,0 +1,101 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #eef2f3;
+    margin: 20px;
+}
+
+h2 {
+    color: #333;
+    text-align: center;
+}
+
+#submitBtn{
+    background-color: rgb(26, 196, 230);
+}
+
+
+/* Form box */
+#myForm {
+    padding: 20px;
+    border-radius: 15px;
+    width: 400px;
+    margin: auto;
+    background: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+    color: #333;
+    position: relative;
+}
+
+/* Form rows */
+.form-row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form-row label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-row input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+/* Buttons */
+button {
+    padding: 8px 14px;
+    margin: 6px 3px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Table */
+table {
+    width: 100%;
+    background: white; 
+    position: relative;
+    margin-top: 2000px;
+    border-collapse: collapse;
+}
+
+table th,
+table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+/* button add new customer */
+#addNewCustomer {
+    background-color: #ffd600;
+    padding: 12px 20px;
+    margin-top: 20px;
+    float: right;
+    border-radius: 6px;
+}
+
+/* Close button */
+#back {
+    position: absolute;
+    right: 416px;
+    top: 14px;
+    z-index: 2;
+    background-color: red;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 0px 14px 0px 0px;
+    font-weight: bold;
+    cursor: pointer;
+    display: none; /* default hidden */
+}
+
+table tr:hover{
+background-color: #f1f1f1f1;
+}
+
