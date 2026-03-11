@@ -69,6 +69,7 @@ http://localhost/customer/index.php
 Make sure customers.txt has write permission so PHP can store data.
 
 Start managing customers – Add, edit, delete, or view details dynamically.
+
 ```
 ---
 
@@ -78,33 +79,39 @@ Screenshots showing functionality of the project should be saved in screenshots/
 
 Add New Customer
 
-screenshots/add-post.png
+![Add New Customer](screenshots/add-post.png)
 
 Detail View An Customer
 
-screenshots/alert.png
+![Detail View An Customer](screenshots/alert.png)
 
 Customer table
 
-screenshots/customer_list.png
+![Customer Table](screenshots/customer_list.png)
 
 Edit Customer
 
-screenshots/edit_customer.png
+![Edit Customer](screenshots/edit_customer.png)
 
 Edit Customer
 
-screenshots/updated_customer.png
+![Updated Customer](screenshots/updated_customer.png)
 
 Before Deleted
 
-screenshots/before-deleted.png
+![Before Deleted](screenshots/before-deleted.png)
 
 Deleted Customer
 
-screenshots/delete_confirmation.png
+![Deleted Customer](screenshots/delete_confirmation.png)
 
 ---
+
+
+
+
+
+
 
 👨‍💻 How It Works
 
@@ -131,3 +138,4 @@ https://github.com/HassanZohaibJadooni
 # Support
 
 If you like this project, consider giving it a **star ⭐ on GitHub**.
+```
