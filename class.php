@@ -1,21 +1,18 @@
 <?php
 class Customer
 {
-    private $file = "customers.txt"; // yeh wo file hay jahan data save hoga yahan say retrive hoga
-   
-    // Create
-    public function create($name, $email, $phone) // yeh create function banaya hay yahan say aik customer create hoga
-    {
-        if (empty($name) || empty($email) || empty($phone)) {
-            return;
-        }
+    private $file = "customers.txt";
 
-        // Generate ID
-        $newId = 1; // default id
+    // Create
+    public function create($name, $email, $phone)
+    {
+        if (empty($name) || empty($email) || empty($phone)) return;
+
+        $newId = 1;
         $customers = $this->read();
         if (!empty($customers)) {
-            $lastCustomer = end($customers); // last record
-            $newId = $lastCustomer["id"] + 1; // last id + 1
+            $lastCustomer = end($customers);
+            $newId = $lastCustomer["id"] + 1;
         }
 
         $fp = fopen($this->file, "a");
@@ -24,37 +21,33 @@ class Customer
         fclose($fp);
     }
 
-
     // Read
     public function read()
     {
         $rows = [];
-
         if (file_exists($this->file)) {
             $fp = fopen($this->file, "r");
             while (($line = fgets($fp)) !== false) {
-                $data = explode("|", trim($line)); // trim extra \n remove karega
+                $data = explode("|", trim($line));
                 if (count($data) == 4) {
                     $rows[] = [
-                        "id"    => $data[0],
-                        "name"  => $data[1],
+                        "id" => $data[0],
+                        "name" => $data[1],
                         "email" => $data[2],
                         "phone" => $data[3]
                     ];
                 }
             }
             fclose($fp);
-           
         }
-
         return $rows;
     }
 
-    // Update 
+    // Update
     public function update($id, $newName, $newEmail, $newPhone)
     {
         $customers = $this->read();
-        $fp = fopen($this->file, "w"); // overwrite file
+        $fp = fopen($this->file, "w");
 
         foreach ($customers as $c) {
             if ($c["id"] == $id) {
@@ -64,7 +57,6 @@ class Customer
             }
             fwrite($fp, $line);
         }
-
         fclose($fp);
     }
 
@@ -80,7 +72,6 @@ class Customer
                 fwrite($fp, $line);
             }
         }
-
         fclose($fp);
     }
 }

@@ -1,28 +1,25 @@
 <?php
-// file ko include krdeya class wala
 include "class.php";
 
-// object create kar deya
 $customer = new Customer();
+$action = $_POST['action'] ?? "";
 
-$action = $_POST['action'] ?? ""; // yeh action wait kar raha hay kay konsa action hoga ose hisab say phir code chalayega
-
-// Add customer 
+// Add customer
 if ($action == "add") {
     $customer->create($_POST['name'], $_POST['email'], $_POST['phone']);
 }
 
-//update customer
+// Update customer
 if ($action == "update") {
     $customer->update($_POST['id'], $_POST['name'], $_POST['email'], $_POST['phone']);
 }
 
-//Delete customer
+// Delete customer
 if ($action == "delete") {
     $customer->delete($_POST['id']);
 }
 
-//Yeh deke gah kay agr data file me he to wo dynamically table row create karega or oske say dynamically 3 buttons create krega
+// Read all customers
 if ($action == "read") {
     $customers = $customer->read();
     foreach ($customers as $c) {
@@ -40,7 +37,7 @@ if ($action == "read") {
     }
 }
 
-// yeh update karne kay liye yani aik id wala pakre ga or ose ko update kr dega
+// Get one customer for edit
 if ($action == "getOne") {
     $customers = $customer->read();
     foreach ($customers as $c) {
@@ -50,4 +47,3 @@ if ($action == "getOne") {
         }
     }
 }
-?>
